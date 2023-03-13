@@ -496,6 +496,7 @@ Plugin 'file:///home/gmarik/path/to/plugin'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 Plugin 'user/L9', {'name': 'newL9'}
+Plugin 'majutsushi/tagbar' 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -584,3 +585,6 @@ let g:bufExplorerSplitVertSize = 30  " Split width
 let g:bufExplorerUseCurrentWindow=1  " Open in new window.
 let g:bufExplorerDisableDefaultKeyMapping =0 " Do not disable default key mappings.
 nnoremap <silent> <F9> :BufExplorer<CR>
+map <silent> <F4> :TagbarToggle<CR> 
+let g:tagbar_width = 25
+autocmd BufReadPost *.cpp,*.c,*.h,*.cc,*.cxx call tagbar#autoopen() 
