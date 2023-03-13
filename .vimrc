@@ -551,19 +551,22 @@ set nocsverb                           "不显示添加数据库是否成功
 " add any database in current directory
 if filereadable("cscope.out")
   cs add /home/narwal/project/dev_pita2/lichee/linux-4.9/cscope.out                   "添加cscope数据库
+  cs add /home/narwal/project/IP1221_SE/lichee/linux-4.9/cscope.out
 endif
+"set cscopeverbose
+"nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+"这几个按键要按照顺序跑，不是同时按下
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 "set csverb                             "显示添加成功与否
 endif
 
 
-nmap <C-@>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <C-@>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-@>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <C-@>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <C-@>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-@>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <C-@>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""\
 
