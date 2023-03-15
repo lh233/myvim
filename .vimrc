@@ -446,7 +446,8 @@ Bundle 'Javascript-OmniCompletion-with-YUI-and-j'
 Bundle 'jslint.vim'
 Bundle "pangloss/vim-javascript"
 Bundle 'Vim-Script-Updater'
-Bundle 'tacahiroy/ctrlp-funky'
+"Bundle 'tacahiroy/ctrlp-funky'
+
 Bundle 'jsbeautify'
 Bundle 'The-NERD-Commenter'
 "django
