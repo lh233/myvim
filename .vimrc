@@ -446,8 +446,7 @@ Bundle 'Javascript-OmniCompletion-with-YUI-and-j'
 Bundle 'jslint.vim'
 Bundle "pangloss/vim-javascript"
 Bundle 'Vim-Script-Updater'
-"Bundle 'tacahiroy/ctrlp-funky'
-
+Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'jsbeautify'
 Bundle 'The-NERD-Commenter'
 "django
@@ -482,6 +481,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'junegunn/vim-easy-align'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -521,6 +521,9 @@ Plugin 'jremmen/vim-ripgrep'
 let g:Lf_ShortcutF = '<c-p>'
 let g:Lf_ShortcutB = '<c-l>'
 let g:Lf_DefaultExternalTool='rg'
+let g:Lf_WorkingDirectoryMode = 'AF'
+
+
 noremap <leader>p :LeaderfFile<cr>
 noremap <leader>f :LeaderfSelf<cr>
 noremap <leader>fm :LeaderfMru<cr>
@@ -592,3 +595,8 @@ nnoremap <silent> <F9> :BufExplorer<CR>
 map <silent> <F4> :TagbarToggle<CR> 
 let g:tagbar_width = 25
 autocmd BufReadPost *.cpp,*.c,*.h,*.cc,*.cxx call tagbar#autoopen() 
+
+
+if has("autocmd")
+      au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
