@@ -60,12 +60,12 @@ endif
 set autoindent
 set cindent
 " Tab键的宽度
-set tabstop=4
+"set tabstop=4
 " 统一缩进为4
-set softtabstop=4
-set shiftwidth=4
+"set softtabstop=4
+"set shiftwidth=4
 " 使用空格代替制表符
-set expandtab
+set noexpandtab
 " 在行和段开始处使用制表符
 set smarttab
 " 显示行号
@@ -103,7 +103,7 @@ nmap \ \cc
 vmap \ \cc
 
 "将tab替换为空格
-nmap tt :%s/\t/    /g<CR>
+"nmap tt :%s/\t/    /g<CR>
 
 
 

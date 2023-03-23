@@ -5,6 +5,18 @@ https://www.cnblogs.com/write-hua/p/7697762.html
 
 vim 插件：
 
+-   ctags
+
+```
+ctag -R
+```
+
+使用 sudo vim /etc/vim/vimrc 编辑vim的配置文档，在其中加入如下命令：
+
+set tags=/home/zhouyl/linux-3.4.7/tags;后面的路径是使用 ctags -R . 后生成的tags文件所在目录，如果需要配置多个 tags，只需如下再添加即可
+
+
+
 - vim-plug
 
 首先介绍的就是用来管理vim插件的插件。有了它，所有插件就都可以写在配置文件中，安装、更新、删除都只需要执行一行命令来操作，十分方便。类似的插件其实有挺多，比如Vundle.vim、vim-pathogen等。他们的功能都大同小异，我最终选择vim-plug是因为它支持并行下载。当插件很多的时候，我觉得它的安装速度是最快的。

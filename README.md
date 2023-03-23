@@ -16,6 +16,7 @@
 
 1. 安装vim `sudo apt-get install vim`
 - 安装ctags：`sudo apt-get install ctags`
+- 安装cscope
 - 安装一些必备程序：`sudo apt-get install xclip vim-gnome astyle python-setuptools`
 - python代码格式化工具：`sudo easy_install -ZU autopep8`
 - `sudo ln -s /usr/bin/ctags /usr/local/bin/ctags`
