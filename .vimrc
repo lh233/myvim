@@ -453,6 +453,20 @@ Bundle 'The-NERD-Commenter'
 Bundle 'django_templates.vim'
 Bundle 'Django-Projects'
 
+
+" vim-gitgutter
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    au VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
+call plug#end()
+set updatetime=100
+"vim-gitgutter
+
 "Bundle 'FredKSchott/CoVim'
 "Bundle 'djangojump'
 " ...
