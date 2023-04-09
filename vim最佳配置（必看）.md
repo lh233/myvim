@@ -168,3 +168,5 @@ noremap <Right> <Nop>
 
 安装流程：https://codeantenna.com/a/RpuXsCNLnD
 
+-   vim-gitgutter
+

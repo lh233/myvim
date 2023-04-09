@@ -455,15 +455,15 @@ Bundle 'Django-Projects'
 
 
 " vim-gitgutter
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    au VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'
-call plug#end()
+"if empty(glob('~/.vim/autoload/plug.vim'))
+"    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+"                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"    au VimEnter * PlugInstall --sync | source $MYVIMRC
+"endif
+"
+"call plug#begin('~/.vim/plugged')
+"Plug 'airblade/vim-gitgutter'
+"call plug#end()
 set updatetime=100
 "vim-gitgutter
 
@@ -614,3 +614,8 @@ autocmd BufReadPost *.cpp,*.c,*.h,*.cc,*.cxx call tagbar#autoopen()
 if has("autocmd")
       au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+
+"gitgutter
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)]
