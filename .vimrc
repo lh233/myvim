@@ -195,6 +195,28 @@ nnoremap <C-F2> :vert diffsplit
 "列出当前目录文件  
 map <F3> :NERDTreeToggle<CR>
 imap <F3> <ESC> :NERDTreeToggle<CR>
+"显示书签"
+let NERDTreeShowBookmarks=1
+" 是否显示隐藏文件
+let NERDTreeShowHidden=1
+
+" 忽略一下文件的显示
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+" }}}
+
 
 "打开树状文件目录  
 map <C-F3> \be  
@@ -592,27 +614,7 @@ autocmd VimEnter * NERDTree
 wincmd w
 autocmd VimEnter * wincmd w
 
-" Check if NERDTree is open or active
-function! IsNERDTreeOpen()
-    return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-"   " Call NERDTreeFind iff NERDTree is active, current window contains a
-"   modifiable
-"   " file, and we're not in vimdiff
-function! SyncTree()
-    if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-        NERDTreeFind
-        wincmd p
-    endif
-endfunction
-" Highlight currently open buffer in NERDTree
-autocmd BufEnter * call SyncTree()
-
-function! ToggleNerdTree()
-    set eventignore=BufEnter
-    NERDTreeToggle
-    set eventignore=
-endfunction
+nn <silent><F2> :exec("NERDTree ".expand('%:h'))<CR>
 nmap <C-n> :call ToggleNerdTree()<CR>"
 
 """"""""""""""""""""""""""""""
@@ -633,9 +635,8 @@ autocmd BufReadPost *.cpp,*.c,*.h,*.cc,*.cxx call tagbar#autoopen()
 
 
 if has("autocmd")
-      au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-
 
 "gitgutter
 nmap ]h <Plug>(GitGutterNextHunk)
