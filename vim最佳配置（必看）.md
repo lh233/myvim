@@ -3,6 +3,10 @@ https://github.com/ma6174/vim
 最佳配置使用说明：
 https://www.cnblogs.com/write-hua/p/7697762.html
 
+
+
+
+
 vim 插件：
 
 -   ctags
@@ -89,6 +93,17 @@ leaderf 比 ctrlp好用
 可以用tab键切换到搜索框来往下跑
 
 一旦按`tab`, 则会进入normal模式, 可以使用大部分normal模式命令, 但是还是有一些normal模式下的LeaderF命令, 你可以在normal模式下按`F1`来显示这些命令. 支持选择多个文件, 也可以分裂窗口打开文件.
+
+cd ~/.vim/bundle
+git clone https://github.com/yggdroot/leaderf
+
+需要安装rg工具
+
+
+
+
+
+
 
 - cscope
 
