@@ -185,3 +185,6 @@ noremap <Right> <Nop>
 
 -   vim-gitgutter
 
+
+## ubuntu 22.04 不支持剪切板
+sudo apt install vim-gtk

@@ -185,7 +185,7 @@ imap <C-a> <Esc>^
 imap <C-e> <Esc>$
 vmap <C-c> "+y
 set mouse=v
-"set clipboard=unnamed
+set clipboard=unnamedplus
 "去空行  
 nnoremap <F2> :g/^\s*$/d<CR> 
 "比较文件  
